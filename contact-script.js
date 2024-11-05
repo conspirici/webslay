@@ -1,3 +1,6 @@
+// Load environment variables from .env file
+require('dotenv').config();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu functionality
     const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -18,13 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
             menuBtn.classList.add('active');
         } else {
             navLinks.style.display = 'none';
-            menuBtn.classList.remove('active');
+            menuBtn.classList.remove('active'); 
         }
     });
 
+    // EmailJS configuration from environment variables
+    const EMAILJS_USER_ID = process.env.EMAILJS_USER_ID;
+    const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
+    const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
+
     // Initialize EmailJS
     (function() {
-        emailjs.init("UhOVqzoHLCka8XEOR"); // Replace with your Public API Key
+        emailjs.init(EMAILJS_USER_ID); // Use the variable for Public API Key
     })();
 
     // Form submission
@@ -32,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const successAlert = document.getElementById('successAlert');
     const errorAlert = document.getElementById('errorAlert');
 
-    
     function showAlert(type) {
         const alert = type === 'success' ? successAlert : errorAlert;
         alert.style.display = 'block';
@@ -47,13 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        const success = Math.random() > 0.5;
         // Send the email using EmailJS
-        emailjs.sendForm('service_nrcn9cr', 'template_xyojlyj', this) // Replace 'YOUR_TEMPLATE_ID' with your actual template ID
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this) // Use variables for service ID and template ID
             .then(() => {
                 // Success message
-            showAlert('success');
-            contactForm.reset(); // Clear the form
+                showAlert('success');
+                contactForm.reset(); // Clear the form
             }, (error) => {
                 // Error message
                 showAlert('failure');
