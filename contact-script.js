@@ -22,22 +22,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("UhOVqzoHLCka8XEOR"); // Replace with your Public API Key
+    })();
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    const successAlert = document.getElementById('successAlert');
+    const errorAlert = document.getElementById('errorAlert');
+
+    
+    function showAlert(type) {
+        const alert = type === 'success' ? successAlert : errorAlert;
+        alert.style.display = 'block';
+        alert.style.opacity = '1';
+        setTimeout(() => {
+            alert.style.opacity = '0'; 
+            setTimeout(() => {
+                alert.style.display = 'none'; 
+            }, 0); 
+        }, 500);
+    }
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const success = Math.random() > 0.5;
+        // Send the email using EmailJS
+        emailjs.sendForm('service_nrcn9cr', 'template_xyojlyj', this) // Replace 'YOUR_TEMPLATE_ID' with your actual template ID
+            .then(() => {
+                // Success message
+            showAlert('success');
+            contactForm.reset(); // Clear the form
+            }, (error) => {
+                // Error message
+                showAlert('failure');
+            });
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
         });
-    });
-
-    // Add animation classes on page load
-    window.addEventListener('load', () => {
-        document.querySelector('.left-text').classList.add('fade-in');
-        document.querySelector('.center-text').classList.add('fade-in');
-        document.querySelector('.right-text').classList.add('fade-in');
-        document.querySelector('.hero-description').classList.add('fade-in');
     });
 
     // Header scroll effect

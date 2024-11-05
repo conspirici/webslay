@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.left-text').classList.add('fade-in');
         document.querySelector('.center-text').classList.add('fade-in');
         document.querySelector('.right-text').classList.add('fade-in');
-        document.querySelector('.hero-description').classList.add('fade-in');
     });
 
     // Header scroll effect

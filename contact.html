@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devylin | Building Trust, Driving Growth</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact - Devylin | Building Trust, Driving Growth</title>
+    <link rel="stylesheet" href="contact-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <link rel="icon" href="assets/favicon.png" type="image/x-icon">
     <link rel="icon" href="assets/favicon.png" type="image/png"> 
     <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -22,10 +23,10 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="/" class="active">Home</a>
+                <a href="/">Home</a>
                 <a href="about.html">About</a>
                 <a href="our-work.html">Our Work</a>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="active">Contact</a>
                 <a href="contact.html" class="cta-button">Start your project <span class="dot">•</span></a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -36,30 +37,43 @@
         </nav>
     </header>
 
-    <main class="main">
-        <section class="hero">
-            <div class="hero-content">
-                <div class="split-text">
-                    <div class="left-text" data-aos="fade-right">
-                        <h2>DEVY</h2>
+    <main class="main-content">
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>We'd love to hear from you. Fill out the form, and we'll be in touch as soon as possible.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <div class="center-text" data-aos="fade-up">
-                        <h2>Impact Delivered.</h2>
-                    </div>
-                    <div class="right-text" data-aos="fade-left">
-                        <h2>LIN</h2>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Web Dev Street, Digital City, 12345</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> devylinmails@gmail.com</p>
                     </div>
                 </div>
-                <div class="hero-description" data-aos="fade-up" data-aos-delay="200">
-                    <p>We create user-centered websites that drive conversions, helping our clients stand out in a competitive market through innovative design and effective online strategies.</p>
+                <div class="alert alert-success" id="successAlert">Message sent successfully!</div>
+                    <div class="alert alert-error" id="errorAlert">Failed to send message. Please try again.</div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Book Free Consulting <span class="dot">•</span></button>
+                    </form>
                 </div>
-            </div>
-        </section>
-
-        <section class="cta-section" data-aos="fade-up" data-aos-delay="300">
-            <div class="cta-content">
-                <h2>Have a project in mind?</h2>
-                <a href="contact.html" class="cta-button cta-text" >Start your project <span class="dot">•</span></a>
             </div>
         </section>
     </main>
@@ -95,7 +109,7 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="contact-script.js"></script>
 </body>
 </html>

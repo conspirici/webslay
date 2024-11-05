@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devylin | Building Trust, Driving Growth</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Our Work - Devylin | Building Trust, Driving Growth</title>
+    <link rel="stylesheet" href="our-work-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,9 +22,9 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="/" class="active">Home</a>
+                <a href="/">Home</a>
                 <a href="about.html">About</a>
-                <a href="our-work.html">Our Work</a>
+                <a href="our-work.html" class="active">Our Work</a>
                 <a href="contact.html">Contact</a>
                 <a href="contact.html" class="cta-button">Start your project <span class="dot">•</span></a>
             </div>
@@ -36,34 +36,50 @@
         </nav>
     </header>
 
-    <main class="main">
-        <section class="hero">
-            <div class="hero-content">
-                <div class="split-text">
-                    <div class="left-text" data-aos="fade-right">
-                        <h2>DEVY</h2>
-                    </div>
-                    <div class="center-text" data-aos="fade-up">
-                        <h2>Impact Delivered.</h2>
-                    </div>
-                    <div class="right-text" data-aos="fade-left">
-                        <h2>LIN</h2>
-                    </div>
-                </div>
-                <div class="hero-description" data-aos="fade-up" data-aos-delay="200">
-                    <p>We create user-centered websites that drive conversions, helping our clients stand out in a competitive market through innovative design and effective online strategies.</p>
-                </div>
-            </div>
-        </section>
+    <main class="main-content">
+        <nav class="service-nav">
+            <a href="#websites" class="service-link active" data-service="websites">Websites</a>
+            <a href="#marketing" class="service-link" data-service="marketing">Marketing</a>
+            <a href="#content-writing" class="service-link" data-service="content-writing">Content Writing</a>
+        </nav>
 
-        <section class="cta-section" data-aos="fade-up" data-aos-delay="300">
-            <div class="cta-content">
-                <h2>Have a project in mind?</h2>
-                <a href="contact.html" class="cta-button cta-text" >Start your project <span class="dot">•</span></a>
+        <section class="content-area">
+            <div class="service-header">
+                <div class="service-title">
+                    <h2 class="pre-title">We build captivating</h2>
+                    <h3 class="main-title">Websites</h3>
+                </div>
+                <p class="service-description">We create responsive, user-friendly websites that seamlessly blend functionality and design to elevate your online presence.</p>
+            </div>
+
+            <div class="service-content">
+                <!-- Websites Content -->
+                <div class="content-section websites-content active">
+                    <div class="website-preview">
+                        <img src="assets/project1.webp" alt="Website Preview" class="preview-image">
+                    </div>
+                </div>
+
+                <!-- Marketing Content -->
+                <div class="content-section marketing-content">
+                    <div class="info-box">
+                        <h4>Meta Ads Marketing</h4>
+                        <p class="info-description">Strategic marketing solutions that elevate your brand and drive growth.</p>
+                        <p class="info-tagline">Marketing that engages and drives results.</p>
+                    </div>
+                </div>
+
+                <!-- Content Writing Content -->
+                <div class="content-section content-writing-content">
+                    <div class="info-box">
+                        <h4>Blog and Article Writing</h4>
+                        <p class="info-description">Engaging, SEO-friendly blog posts and articles that boost visibility, educate readers, and establish your brand as an industry leader.</p>
+                        <p class="info-tagline">Content that connects and converts.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
@@ -96,6 +112,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="our-work-script.js"></script>
 </body>
 </html>
