@@ -1,6 +1,3 @@
-// Load environment variables from .env file
-require('dotenv').config();
-
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu functionality
     const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -25,14 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // EmailJS configuration from environment variables
-    const EMAILJS_USER_ID = process.env.EMAILJS_USER_ID;
-    const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
-    const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
+    // EmailJS configuration (using the provided values)
+    const EMAILJS_USER_ID = 'MbLgtamp2S-jIR5sO';  // Public API Key
+    const EMAILJS_TEMPLATE_ID = 'template_v6c6j96';  // Template ID
+    const EMAILJS_SERVICE_ID = 'service_2tb79ns';  // Service ID
 
     // Initialize EmailJS
     (function() {
-        emailjs.init(EMAILJS_USER_ID); // Use the variable for Public API Key
+        emailjs.init(EMAILJS_USER_ID); // Use the provided Public API Key
     })();
 
     // Form submission
@@ -54,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        // Send the email using EmailJS
-        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this) // Use variables for service ID and template ID
+        // Send the email using EmailJS with the provided service ID and template ID
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this) // Use the provided service ID and template ID
             .then(() => {
                 // Success message
                 showAlert('success');
